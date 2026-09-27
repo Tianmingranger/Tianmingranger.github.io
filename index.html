@@ -153,6 +153,34 @@ td.ay{font-family:var(--mono);font-size:13px;color:var(--ink-2);font-variant-num
 .talks .conf{color:var(--ink)}
 .talks .up{margin-left:8px;vertical-align:1px}
 
+/* featured: one-way substitution figure */
+.feat{margin-top:40px;border:1px solid var(--rule);background:var(--surface);padding:20px 22px 16px}
+.feat .eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3)}
+.feat .ftitle{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.35;margin:4px 0 16px}
+.feat .ftitle a{color:var(--ink)}
+.feat .ftitle a:hover{color:var(--accent)}
+.feat .scroll{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
+.osr{display:block;width:100%;min-width:560px;height:auto}
+.osr text{font-family:var(--sans);font-size:11.5px;fill:var(--ink-2)}
+.osr .lab{font-size:12px;fill:var(--ink);font-weight:500}
+.osr .sub{font-family:var(--mono);font-size:10.5px;fill:var(--ink-3)}
+.osr .band{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1}
+.osr .band-t{font-size:11px;fill:var(--ink-2)}
+.osr .r1{fill:var(--accent);fill-opacity:.16}
+.osr .r2{fill:var(--accent);fill-opacity:.42}
+.osr .r3{fill:var(--accent);fill-opacity:.9}
+.osr .rline{fill:none;stroke:var(--accent);stroke-width:1.2}
+.osr .rt{font-size:12px;font-weight:500;fill:var(--ink)}
+.osr .rt-inv{font-size:12px;font-weight:500;fill:var(--bg)}
+.osr .cap{font-family:var(--mono);font-size:11px;fill:var(--ink-2)}
+.osr .guide{stroke:var(--rule-strong);stroke-width:1;stroke-dasharray:2 3}
+.osr .prot{stroke:var(--accent);stroke-width:1.5;fill:none}
+.osr .guide2{stroke:var(--accent);stroke-width:1;stroke-dasharray:2 3;opacity:.6}
+.osr .prot-d{stroke:var(--accent);stroke-width:6;stroke-opacity:.35;fill:none}
+.feat figcaption{font-size:13.5px;color:var(--ink-2);margin-top:12px;max-width:44em;line-height:1.55}
+.feat .stats{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:12px;font-size:13px;color:var(--ink-3)}
+.feat .stats b{color:var(--ink);font-weight:500}
+
 footer{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--ink-3)}
 
 @media (max-width:880px){
@@ -277,6 +305,63 @@ footer{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:20px;disp
           <span class="chip plain">Airline &amp; hotel booking</span><span class="chip plain">Healthcare</span><span class="chip plain">Make-to-order manufacturing</span><span class="chip plain">Cloud computing</span><span class="chip plain">E-commerce</span><span class="chip plain">Revenue management</span>
         </div>
       </div>
+
+
+      <figure class="feat" aria-labelledby="feat-title">
+        <div class="eyebrow">Featured project</div>
+        <div class="ftitle" id="feat-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7109699" target="_blank" rel="noopener">Optimal Online Allocation of One-Way Substitutable Resources</a></div>
+        <div class="scroll">
+        <svg class="osr" viewBox="0 0 640 262" role="img" aria-label="Three resource classes laid out left to right, low to high. Class 1 customers can use any resource, class 2 customers can use class 2 or 3 resources, class 3 customers only class 3. Protection levels P3 and P2 reserve units at the top for higher-class customers.">
+          <!-- guides -->
+          <line class="guide" x1="360" y1="10" x2="360" y2="168"/>
+          <line class="guide" x1="510" y1="10" x2="510" y2="168"/>
+
+          <!-- customers -->
+          <text class="lab" x="0" y="27">Class 3 customer</text>
+          <text class="sub" x="0" y="40">fare r₃ (highest)</text>
+          <rect class="band" x="510" y="14" width="110" height="22" rx="2"/>
+          <text class="band-t" x="565" y="29" text-anchor="middle">class 3 only</text>
+
+          <text class="lab" x="0" y="63">Class 2 customer</text>
+          <text class="sub" x="0" y="76">fare r₂</text>
+          <rect class="band" x="360" y="50" width="260" height="22" rx="2"/>
+          <text class="band-t" x="490" y="65" text-anchor="middle">class 2 or 3 units</text>
+
+          <text class="lab" x="0" y="99">Class 1 customer</text>
+          <text class="sub" x="0" y="112">fare r₁ (lowest)</text>
+          <rect class="band" x="120" y="86" width="500" height="22" rx="2"/>
+          <text class="band-t" x="370" y="101" text-anchor="middle">any unit</text>
+
+          <!-- resources -->
+          <text class="lab" x="0" y="143">Resources</text>
+          <text class="sub" x="0" y="156">by class</text>
+          <rect class="r1" x="120" y="126" width="240" height="34"/>
+          <rect class="r2" x="360" y="126" width="150" height="34"/>
+          <rect class="r3" x="510" y="126" width="110" height="34"/>
+          <rect class="rline" x="120" y="126" width="500" height="34"/>
+          <text class="rt" x="240" y="147" text-anchor="middle">Class 1 · Economy</text>
+          <text class="rt" x="435" y="147" text-anchor="middle">Class 2 · Premium</text>
+          <text class="rt-inv" x="565" y="147" text-anchor="middle">Class 3 · Business</text>
+          <text class="cap" x="240" y="178" text-anchor="middle">C₁</text>
+          <text class="cap" x="435" y="178" text-anchor="middle">C₂</text>
+          <text class="cap" x="565" y="178" text-anchor="middle">C₃</text>
+
+          <!-- protection levels, measured from the top class down -->
+          <text class="lab" x="0" y="209">Protection levels</text>
+          <text class="sub" x="0" y="222">reserved from the top</text>
+          <line class="guide2" x1="540" y1="160" x2="540" y2="200"/><path class="prot" d="M540 198 v12 M620 198 v12"/>
+          <line class="prot-d" x1="540" y1="204" x2="620" y2="204"/>
+          <text class="band-t" x="532" y="208" text-anchor="end">P₃ units kept for class 3</text>
+          <line class="guide2" x1="420" y1="160" x2="420" y2="226"/><path class="prot" d="M420 224 v12 M620 224 v12"/>
+          <line class="prot-d" x1="420" y1="230" x2="620" y2="230"/>
+          <text class="band-t" x="412" y="234" text-anchor="end">P₂ units kept for class ≥ 2</text>
+          <text class="sub" x="120" y="256">low</text>
+          <text class="sub" x="620" y="256" text-anchor="end">high  →  resource class</text>
+        </svg>
+        </div>
+        <figcaption>A higher-class unit can serve a lower-class customer, but never the reverse, as with airline cabins, hotel rooms, parcel lockers and cloud VMs. Customers arrive in an arbitrary, possibly adversarial order. PLP-OSR assigns each accepted customer the lowest feasible class of unit, and admits a class-<i>m</i> customer only if at least <i>P<sub>k</sub></i> units able to serve class ≥ <i>k</i> would remain for every higher class <i>k</i>. Reserving from the top, instead of capping from the bottom, handles the mid-tier bottleneck that substitution creates.</figcaption>
+        <div class="stats"><span><b>Asymptotic optimal</b> competitive ratio with large capacity</span><span><b>Recovers</b> Ball &amp; Queyranne (2009) as a special case</span><span><b>Outperforms</b> benchmarks on a major airline&rsquo;s booking data</span></div>
+      </figure>
 
       <h3 style="margin-top:44px">Publications</h3>
       <ol class="papers">
