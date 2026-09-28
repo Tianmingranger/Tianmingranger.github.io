@@ -485,7 +485,7 @@ footer{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:20px;disp
   </main>
 
   <footer>
-    <span>© 2026 Huo Tianming</span>
+    <span>© 2026 Huo Tianming<span id="visits" hidden> · <span id="visits-n"></span> visitors since September 2026</span></span>
     <span>College of Integrative Studies · Singapore Management University</span>
   </footer>
 </div>
@@ -511,6 +511,23 @@ document.querySelectorAll('.copy').forEach(function(b){
   },{rootMargin:'-30% 0px -60% 0px'});
   document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
   links[0].classList.add('on');
+})();
+</script>
+
+<!-- Visitor counter (GoatCounter). Change GC_CODE if your GoatCounter code is different. -->
+<script>
+(function(){
+  var GC_CODE='tianmingranger';
+  var base='https://'+GC_CODE+'.goatcounter.com';
+  window.goatcounter={path:'/'};
+  var s=document.createElement('script');
+  s.async=true;s.src='https://gc.zgo.at/count.js';s.setAttribute('data-goatcounter',base+'/count');
+  document.head.appendChild(s);
+  try{
+    fetch(base+'/counter/'+encodeURIComponent('/')+'.json').then(function(r){return r.ok?r.json():null}).then(function(d){
+      if(d&&d.count){document.getElementById('visits-n').textContent=d.count;document.getElementById('visits').hidden=false}
+    }).catch(function(){});
+  }catch(e){}
 })();
 </script>
 
